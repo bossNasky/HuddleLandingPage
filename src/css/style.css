@@ -1,6 +1,7 @@
 :root {
   --clr-primary-400: hsl(257, 40%, 49%);
   --clr-primary-300: hsl(300, 69%, 71%);
+  --clr-neutral-400: hsl(0, 100%, 100%);
 }
 
 *,
@@ -15,4 +16,138 @@ body {
   font-family: "Open Sans", sans-serif;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("./../images/bg-desktop.svg");
+  background-color: var(--clr-primary-400);
+}
+
+.wrapper {
+  --width: 70rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo-container {
+  padding: 3rem 0;
+}
+
+.logo:link,
+.logo:visited {
+  display: inline-block;
+}
+
+.logo-image {
+  width: 10rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 3rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.heading__primary {
+  margin-top: 1.5rem;
+  color: var(--clr-neutral-400);
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--clr-neutral-400);
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.btn--register {
+  align-self: flex-start;
+  padding: 0.75rem 2.75rem;
+  border-radius: 10rem;
+  color: var(--clr-primary-400);
+  background-color: var(--clr-neutral-400);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+.socials {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.socials__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials__link {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  padding: 0.4rem;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--clr-neutral-400);
+}
+
+.socials__link ion-icon {
+  color: var(--clr-neutral-400);
+  font-size: 1.25rem;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 55rem) {
+  .main {
+    padding-bottom: 8rem;
+  }
+  .wrapper {
+    --width: 30rem;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+  .btn--register {
+    align-self: center;
+  }
+
+  .socials {
+    top: 95%;
+    left: 50%;
+  }
 }
